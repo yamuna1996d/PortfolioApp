@@ -59,7 +59,7 @@ class ProjectsSection extends StatelessWidget {
                       description:
                       "Prana Insight as times and lifestyles are changing, we need to give special attention to the education of our children. Their future should be empowered with the help of parents, teachers and society as a whole."
                           "Digitalization is bringing a positive difference in the educational sector, globally. The classic tuition system is now being taken over by effective learning applications. This gives a personalized, visually rich learning experience to the students.",
-                      tags: const ['Flutter', 'Video Streaming', 'Riverpod','Api Integration', 'UI Integration', 'Provider'],
+                      tags: const ['Flutter', 'Video Streaming','Api Integration', 'UI Integration', 'Provider'],
                       width: isWide ? (constraints.maxWidth - 24) / 2 : constraints.maxWidth,
                     ),
                     ProjectCard(
@@ -76,7 +76,7 @@ class ProjectsSection extends StatelessWidget {
                       image: 'assets/pine.png',
                       title: 'Live Photo Transferring App',
                       description:
-                      'Built a productivity app with offline support, task tracking, and storing information .',
+                      'Developed custom native plugins for iOS (Swift) and Android (Kotlin) enabling seamless image transfer from the device camera app to the Flutter app, along with real-time, simultaneous image upload to the server.',
                       tags: const ['Flutter', 'Method channel - Swift, Kotlin' 'Clean Architecture'],
                       width: isWide ? (constraints.maxWidth - 24) / 2 : constraints.maxWidth,
                     ),
