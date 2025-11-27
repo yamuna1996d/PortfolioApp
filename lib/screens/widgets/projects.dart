@@ -176,7 +176,7 @@ class _ProjectCardState extends State<ProjectCard> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// ---------------- IMAGE WITH RANDOM BG ----------------
+
             ClipRRect(
               borderRadius: const BorderRadius.vertical(top: Radius.circular(22)),
               child: AnimatedContainer(
@@ -195,14 +195,12 @@ class _ProjectCardState extends State<ProjectCard> {
               ),
             ),
 
-            /// ---------------- CONTENT SECTION ----------------
             Padding(
               padding: const EdgeInsets.fromLTRB(24, 22, 24, 24),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
 
-                  /// TITLE
                   Text(
                     widget.title,
                     style: TextStyle(
@@ -214,7 +212,6 @@ class _ProjectCardState extends State<ProjectCard> {
 
                   const SizedBox(height: 10),
 
-                  /// DESCRIPTION
                   Text(
                     widget.description,
                     style: TextStyle(
@@ -226,7 +223,6 @@ class _ProjectCardState extends State<ProjectCard> {
 
                   const SizedBox(height: 16),
 
-                  /// TAGS
                   Wrap(
                     spacing: 10,
                     runSpacing: 10,

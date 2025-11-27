@@ -18,27 +18,39 @@ class _HomeSectionState extends State<HomeSection>
     'Plugin Builder',
   ];
   int _index = 0;
+  bool _stop = false;
 
   @override
   void initState() {
     super.initState();
     _ctrl = AnimationController(vsync: this, duration: const Duration(milliseconds: 900));
     _opacity = CurvedAnimation(parent: _ctrl, curve: Curves.easeInOut);
-    _animateCycle();
+    _startAnimation();
+  }
+  void _startAnimation() {
+    Future.microtask(_animateCycle);
   }
 
   void _animateCycle() async {
-    while (mounted) {
+    while (mounted && !_stop) {
       await _ctrl.forward();
+      if (!mounted || _stop) return;
+
       await Future.delayed(const Duration(milliseconds: 900));
+      if (!mounted || _stop) return;
+
       await _ctrl.reverse();
-      _index = (_index + 1) % _words.length;
-      if (mounted) setState(() {});
+      if (!mounted || _stop) return;
+
+      setState(() {
+        _index = (_index + 1) % _words.length;
+      });
     }
   }
-
   @override
   void dispose() {
+    _stop = true;
+    _ctrl.stop();
     _ctrl.dispose();
     super.dispose();
   }
